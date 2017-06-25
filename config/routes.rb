@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :packages
-
   devise_for :users
 
   root'pages#home'
