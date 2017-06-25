@@ -8,6 +8,7 @@ end
 
 # assign roles
 gem 'rolify'
+gem 'pundit'
 # user login
 gem 'devise'
 # styling framework
