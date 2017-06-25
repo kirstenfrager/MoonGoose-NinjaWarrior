@@ -25,6 +25,7 @@ class PackagesController < ApplicationController
   # POST /packages.json
   def create
     @package = Package.new(package_params)
+    @package.user_id = current_user.id
 
     respond_to do |format|
       if @package.save
@@ -40,6 +41,9 @@ class PackagesController < ApplicationController
   # PATCH/PUT /packages/1
   # PATCH/PUT /packages/1.json
   def update
+    @package = Package.find(params[:id])
+    authorize @package
+
     respond_to do |format|
       if @package.update(package_params)
         format.html { redirect_to @package, notice: 'Package was successfully updated.' }
