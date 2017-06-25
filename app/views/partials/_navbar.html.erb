@@ -1,0 +1,18 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right">NINJA WARRIOR</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/pages/bio">Bio</a></li>
+        <li><a href="/pages/cart">Cart</a></li>
+        <li><a href="/pages/contact">Contact</a></li>
+        <li><a href="/pages/faq">FAQ</a></li>
+        <li><a href="/pages/merch">Merch</a></li>
+        <li><a href="/pages/packages">Packages</a></li>
+        <li><% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <% else %>
+        <%= link_to('Login', new_user_session_path)  %>
+    <% end %></li>
+      </ul>
+    </div>
+  </nav>
