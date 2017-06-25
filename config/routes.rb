@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
+  resources :packages
+
   get 'pages/home'
 
   get 'pages/bio'
