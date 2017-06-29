@@ -10,5 +10,14 @@
   <%= @package.description %>
 </p>
 
+<% if @package.image_content_type != nil %>
+  <%= image_tag @package.image.url(:medium) %>
+<% end %>
+
+<% if @package.document_content_type != nil %>
+  <%= @package.document.url(:medium) %> <br>
+<% end %>
+
+
 <%= link_to 'Edit', edit_package_path(@package) if current_user.admin? %> |
 <%= link_to 'Back', packages_path %>

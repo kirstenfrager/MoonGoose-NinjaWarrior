@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+# document uploader
+gem 'paperclip', '~> 5.0.0'
 # assign roles
 gem 'rolify'
 gem 'pundit'
