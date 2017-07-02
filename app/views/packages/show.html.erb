@@ -10,14 +10,23 @@
   <%= @package.description %>
 </p>
 
+<p>Image:</p>
 <% if @package.image_content_type != nil %>
   <%= image_tag @package.image.url(:medium) %>
 <% end %>
 
+<br>
+
+<p>Document:</p>
 <% if @package.document_content_type != nil %>
-  <%= @package.document.url(:medium) %> <br>
+  <%= @package.document_file_name %> <br>
 <% end %>
 
+<%= link_to 'Download PDF to computer', @package.document(:original), download: "User_#{@user_id}_document" %>
+
+<br>
+
+<%= link_to "Download to new tab", @package.document.url(:original, false) %>
 
 <%= link_to 'Edit', edit_package_path(@package) if current_user.admin? %> |
 <%= link_to 'Back', packages_path %>

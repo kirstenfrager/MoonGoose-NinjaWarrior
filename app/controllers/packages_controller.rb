@@ -10,6 +10,7 @@ class PackagesController < ApplicationController
   # GET /packages/1
   # GET /packages/1.json
   def show
+    @user = User.all
   end
 
   # GET /packages/new
