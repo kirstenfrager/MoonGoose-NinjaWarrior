@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+#upload documents and photos
+gem 'paperclip'
 # assign roles
 gem 'rolify'
 # user login
