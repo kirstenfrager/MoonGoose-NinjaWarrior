@@ -5,8 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#for contact form
+gem "simple_form"
 #upload documents and photos
 gem 'paperclip'
+gem 'pundit'
 # assign roles
 gem 'rolify'
 # user login
