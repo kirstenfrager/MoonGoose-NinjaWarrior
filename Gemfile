@@ -5,12 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
-# document uploader
-gem 'paperclip', '~> 5.0.0'
+#for contact form
+gem "simple_form"
+#upload documents and photos
+gem 'paperclip'
+gem 'pundit'
 # assign roles
 gem 'rolify'
-gem 'pundit'
 # user login
 gem 'devise'
 # styling framework
