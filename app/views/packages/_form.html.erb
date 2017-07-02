@@ -1,10 +1,10 @@
-<%= form_for(package) do |f| %>
-  <% if package.errors.any? %>
+<%= form_for @package, html: { multipart: true } do |f| %>
+  <% if @package.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(package.errors.count, "error") %> prohibited this package from being saved:</h2>
 
       <ul>
-      <% package.errors.full_messages.each do |message| %>
+      <% @package.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= f.label :document %>
+    <%= f.file_field :document %>
   </div>
 
   <div class="field">
